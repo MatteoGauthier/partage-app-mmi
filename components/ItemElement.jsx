@@ -8,9 +8,9 @@ export default function ItemElement({ item: { fields: record } }) {
 		>
 			<span className="text-xl font-semibold">{record.Name}</span>
 			<p className="text-gray-500 font-medium leading-snug mt-1 mb-4">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti aut perspiciatis repudiandae blanditiis vel.
-				Rem voluptates quam, velit odio, possimus consequatur mollitia cumque, odit facilis aliquam quidem corrupti
-				quia? Temporibus?	
+				{record.Description
+					? record.Description
+					: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti aut perspiciatis repudiandae blanditiis vel.			Rem voluptates quam, velit odio, possimus consequatur mollitia cumque, odit facilis aliquam quidem corrupti quia? Temporibus?"}
 			</p>
 			<div className="flex justify-between items-center">
 				<div className="flex space-x-2">
@@ -38,7 +38,9 @@ export default function ItemElement({ item: { fields: record } }) {
 						</div>
 					)}
 				</div>
-				<a href={record.Lien} className="bg-primary text-white font-medium px-3 py-1 rounded">Accéder au site</a>
+				<a href={record.Lien} className="bg-primary text-white font-medium px-3 py-1 rounded">
+					Accéder au site
+				</a>
 			</div>
 		</div>
 	)
